@@ -1,4 +1,5 @@
-Frontend - HTML, CSS, JavaScript and back-end technology Node.js
+simple real-time chat application using WebSocket and use Library: Socket.io for real-time communication.
 
-![image](https://github.com/user-attachments/assets/52bbcd09-f4ae-48c6-8ece-f9ba61ad6273)
-![image](https://github.com/user-attachments/assets/ff57529a-ff4b-49c5-9ffc-f6a7320aafe8)
+![image](https://github.com/user-attachments/assets/6d2d88ee-6c0f-4907-8921-7ebdfcf3feee)
+
+![image](https://github.com/user-attachments/assets/a51bfcb9-c366-4362-b1b2-3adf621d226f)
