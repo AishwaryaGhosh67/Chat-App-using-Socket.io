@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Realtime Chat App</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #83a4d4, #b6fbff);
+      margin: 0;
+      padding: 0;
+    }
+
+    .chat-box {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fdfdfd;
+      padding: 20px 25px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      border: 2px solid #e2e8f0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #2d3748;
+      margin-bottom: 20px;
+    }
+
+    .join-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .join-form input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #cbd5e0;
+      border-radius: 8px;
+    }
+
+    .join-form button {
+      padding: 10px 20px;
+      background-color: #3182ce;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .join-form button:hover {
+      background-color: #2b6cb0;
+    }
+
+    #messages {
+      height: 300px;
+      overflow-y: auto;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px;
+      background: #f2fcc2;
+      margin-bottom: 15px;
+    }
+
+    #messages li {
+      margin-bottom: 10px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background-color: #f6eb89;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .message-username {
+      font-weight: bold;
+      color: #1a202c;
+    }
+
+    #form {
+      display: flex;
+      gap: 10px;
+    }
+
+    #input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #cbd5e0;
+      border-radius: 8px;
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      background-color: #38a169;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2f855a;
+    }
+
+    @media (max-width: 500px) {
+      .join-form, #form {
+        flex-direction: column;
+      }
+
+      .join-form button, button[type="submit"] {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <h2>💬 Realtime Chat Room</h2>
+
+    <div class="join-form">
+      <input id="username" placeholder="Username" />
+      <input id="roomInput" placeholder="Room name" />
+      <button onclick="joinRoom()">Join</button>
+    </div>
+
+    <ul id="messages"></ul>
+
+    <form id="form">
+      <input id="input" autocomplete="off" placeholder="Type a message..." />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
